@@ -16,8 +16,8 @@ config_dir=/etc/aliyundrive-subscribe/conf
 config_file=$config_dir/app.ini
 mkdir -p "$config_dir"
 if [ ! -f "$config_file" ]; then
-    curl -sSL -o "$config_file" https://raw.githubusercontent.com/kebedd69/mao/main/app.ini \
-        || { echo "无法下载配置文件，请手动从 GitHub 下载并将其保存到 $config_file"; exit 1; }
+    curl -sSL -o "$config_file" https://ghproxy.com/https://raw.githubusercontent.com/kebedd69/mao/main/app.ini \
+        || { echo "无法下载配置文件，请手动下载并将其保存到 $config_file"; exit 1; }
 fi
 
 # 运行新容器，并使用安全设置
