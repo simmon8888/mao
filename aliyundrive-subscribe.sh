@@ -21,4 +21,4 @@ if [ ! -f "$config_file" ]; then
 fi
 
 # 运行新容器，并使用安全设置
-docker run -d --name aliyundrive-subscribe --restart always -p 8002:8002 -u 1000:1000 -v /etc/aliyundrive-subscribe/conf:/app/conf looby/aliyundrive-subscribe:latest
+docker run -d --name aliyundrive-subscribe --restart always --privileged=true -p 8002:8002 -u 1000:1000 -v /etc/aliyundrive-subscribe/conf:/app/conf looby/aliyundrive-subscribe:latest
